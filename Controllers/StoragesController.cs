@@ -53,6 +53,15 @@ namespace EntityFCAndWebApi.Controllers
             return new JsonResult(Ok(resuit));
         }
 
+        //getAll
+        [HttpGet()]
+        public JsonResult GetAll() 
+        { 
+            var result = _context.Storages.ToList();
+
+            return new JsonResult(Ok(result));
+        }
+
         // Delete
         [HttpDelete]
         public JsonResult Delete(int id)

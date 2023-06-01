@@ -4,7 +4,7 @@ using EntityFCAndWebApi.Models;
 
 namespace EntityFCAndWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -49,6 +49,15 @@ namespace EntityFCAndWebApi.Controllers
 
             }
             return new JsonResult(Ok(resuit));
+        }
+
+        //getAll
+        [HttpGet()]
+        public JsonResult GetAll() 
+        { 
+            var result = _context.Products.ToList();
+
+            return new JsonResult(Ok(result));
         }
 
         // Delete
