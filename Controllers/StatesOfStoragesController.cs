@@ -53,7 +53,7 @@ namespace EntityFCAndWebApi.Controllers
         }
 
         //getAll
-        [HttpGet()]
+        [HttpGet]
         public JsonResult GetAll()
         {
             var result = _context.StatesOfStorages.ToList();
